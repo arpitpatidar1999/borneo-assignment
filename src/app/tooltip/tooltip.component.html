@@ -1,0 +1,11 @@
+<div class="tooltip-container" (mouseover)="onHover()" (mouseout)="onMouseOut()" (click)="onClick()">
+    <ng-content></ng-content>
+    <div *ngIf="isTooltipVisible" class="tooltip">
+      <p>{{ truncatedMessage }}</p>
+    </div>
+    <div *ngIf="isFullMessageVisible" class="tooltip full-message">
+      <p>{{ fullMessage }}</p>
+      <button (click)="closeTooltip($event)" >X</button>
+    </div>
+  </div>
+  
